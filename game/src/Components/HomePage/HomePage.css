@@ -1,0 +1,41 @@
+@font-face {
+  font-family:'Fredoka One';
+src: url('https://fonts.googleapis.com/css2?family=Fredoka+One');
+
+}
+
+.main {
+  width: 800px;
+  background-color:rgba(0, 0, 0, 0.5);
+  margin-left:550px;
+  margin-top: 300px;
+  border:white;
+  border-style: solid;
+  border-radius: 25px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0px;
+  color: orange;
+  font-size: 60px;
+  font-family: 'Fredoka One', Impact;
+}
+
+p {
+  color: white;
+  font-size: 18px;
+  margin-top: -10px;
+  margin-left: 10px;
+}
+
+button {
+  margin-left: 350px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 50px;
+  font-size: 23px;
+  border-radius: 50%;
+}
+
