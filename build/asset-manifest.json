@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0d2f4c8e.chunk.css",
+    "main.js": "/static/js/main.734d19c6.chunk.js",
+    "main.js.map": "/static/js/main.734d19c6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2ef96d68.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2ef96d68.js.map",
+    "static/js/2.7f2628ca.chunk.js": "/static/js/2.7f2628ca.chunk.js",
+    "static/js/2.7f2628ca.chunk.js.map": "/static/js/2.7f2628ca.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.69deb1246b96e214c67e55d9b16f1fac.js": "/precache-manifest.69deb1246b96e214c67e55d9b16f1fac.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.0d2f4c8e.chunk.css.map": "/static/css/main.0d2f4c8e.chunk.css.map",
+    "static/js/2.7f2628ca.chunk.js.LICENSE.txt": "/static/js/2.7f2628ca.chunk.js.LICENSE.txt",
+    "static/media/Aang.jpg": "/static/media/Aang.8445144e.jpg",
+    "static/media/Appa.png": "/static/media/Appa.22d0c65f.png",
+    "static/media/Katara.jpeg": "/static/media/Katara.d7cab815.jpeg",
+    "static/media/Logo.jpg": "/static/media/Logo.022283b3.jpg",
+    "static/media/Prince_Zuko.jpg": "/static/media/Prince_Zuko.b77e4915.jpg",
+    "static/media/Sokka.png": "/static/media/Sokka.95d52468.png",
+    "static/media/Toph.jpg": "/static/media/Toph.5d90638a.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2ef96d68.js",
+    "static/js/2.7f2628ca.chunk.js",
+    "static/css/main.0d2f4c8e.chunk.css",
+    "static/js/main.734d19c6.chunk.js"
+  ]
+}

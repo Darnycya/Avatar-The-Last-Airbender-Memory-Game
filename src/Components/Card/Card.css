@@ -1,0 +1,30 @@
+.Card{
+  flex: 1
+}
+
+.Card:hover{
+  cursor: pointer;
+}
+
+.Card img{
+  width: 220px;
+  height: 220px;
+  border: 3px white solid;
+  border-radius: 5px;
+  
+}
+
+
+
+@media all and (max-width: 425px) {
+
+  .Card img{
+    width: 100px;
+    height: 100px;
+    border: 3px white solid;
+    border-radius: 5px;
+    
+  }
+
+
+}
