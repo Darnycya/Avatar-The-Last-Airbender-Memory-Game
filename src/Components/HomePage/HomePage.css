@@ -70,5 +70,6 @@ button {
     height: 50px;
     font-size: 23px;
     border-radius: 50%;
+    background-color: white;
   }
 }
