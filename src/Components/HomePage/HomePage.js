@@ -10,7 +10,7 @@ class HomePage extends Component {
     return (
       <div className="main">
         <h1>Welcome to Avatar: The Last Airbender Memory Game</h1>
-        <p> Objective: Click a card to flip it over and try to find it's match. Once you have found all pairs you have won the game. Press Enter to begin.</p>
+        <p> Objective: Click a card to flip it over and try to find its match. Once you have found all pairs you have won the game. Press Enter to begin.</p>
         
         <Link to="/gamepage"><button>Enter</button></Link>
       </div>
