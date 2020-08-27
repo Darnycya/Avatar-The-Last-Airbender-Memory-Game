@@ -13,7 +13,7 @@ import Mai from '../Assets/Images/Mai.png'
 import momo from '../Assets/Images/momo.jpg'
 import Tylee from '../Assets/Images/Tylee.png'
 import Azulaa from '../Assets/Images/Azulaa.png'
-import Bumi from '../Assets/Images/Bumi.png'
+import Bumi from '../Assets/Images/Bumi.jpeg'
 
 
 function Main() {
