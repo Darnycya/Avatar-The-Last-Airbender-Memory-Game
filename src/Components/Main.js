@@ -12,6 +12,8 @@ import kyoshi from '../Assets/Images/kyoshi.jpg'
 import Mai from '../Assets/Images/Mai.png'
 import momo from '../Assets/Images/momo.jpg'
 import Tylee from '../Assets/Images/Tylee.png'
+import Azulaa from '../Assets/Images/Azulaa.png'
+import Bumi from '../Assets/Images/Bumi.png'
 
 
 function Main() {
@@ -27,7 +29,7 @@ export default Main
 
 function buildCards() {
   let id = 0
-  const images = {Aang, Appa, Katara, PrinceZuko, Sokka, Toph, Iroh, kyoshi, Mai, momo, Tylee}
+  const images = {Aang, Appa, Katara, PrinceZuko, Sokka, Toph, Iroh, kyoshi, Mai, momo, Tylee, Azulaa, Bumi }
   const cards = Object.keys(images).reduce((result, item) => {
     const getCard = () => ({
       id: id++,
