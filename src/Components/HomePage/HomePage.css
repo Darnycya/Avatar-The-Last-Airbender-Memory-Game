@@ -7,8 +7,8 @@ src: url('https://fonts.googleapis.com/css2?family=Fredoka+One');
 .main {
   width: 800px;
   background-color:rgba(0, 0, 0, 0.5);
-  margin-left:550px;
-  margin-top: 300px;
+  margin-left: 20%;
+  margin-top: 15%;
   border:white;
   border-style: solid;
   border-radius: 25px;
@@ -30,13 +30,20 @@ p {
 }
 
 button {
-  margin-left: 350px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  width: 100px;
-  height: 50px;
-  font-size: 23px;
-  border-radius: 50%;
+    margin-left: 350px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 50px;
+    font-size: 23px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+input {
+  margin-left: 35%;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 @media all and (max-width: 425px) {

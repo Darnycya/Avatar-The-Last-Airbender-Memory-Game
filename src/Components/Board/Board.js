@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+// import Header from '../Header/Header'
 import Card from '../Card/Card'
 import './Board.css'
 
@@ -45,11 +46,14 @@ const Board = props => {
   }, [checkers, completed])
 
   return (
+    <>
+       {/* <Header /> */}
     <div className="Board">
       {cards.map(card => (
         <Card {...card} onClick={onCardClick(card)} key={card.id} />
       ))}
-    </div>
+      </div>
+      </>
   )
 }
 
