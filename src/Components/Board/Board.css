@@ -1,16 +1,21 @@
 .Board {
-  width: 1010px;
+  width: 900px;
   display: flex;
   align-items: center;
   flex-wrap: wrap; 
-  margin-left: 20%;
-  margin-top: 5%;
+  margin: 8vh auto;
+  
  
 }
 
 body {
-  background-image: url(https://i.pinimg.com/originals/78/af/59/78af59d62c9edba37a1f4a66055f63da.jpg);
-  background-size: 100%;
+  background: url(https://i.pinimg.com/originals/78/af/59/78af59d62c9edba37a1f4a66055f63da.jpg) no-repeat center center fixed; ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ padding-top: 50px;
+  
 }
 
 

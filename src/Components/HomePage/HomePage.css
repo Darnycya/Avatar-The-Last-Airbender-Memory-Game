@@ -7,11 +7,12 @@ src: url('https://fonts.googleapis.com/css2?family=Fredoka+One');
 .main {
   width: 800px;
   background-color:rgba(0, 0, 0, 0.5);
-  margin-left: 20%;
-  margin-top: 15%;
   border:white;
   border-style: solid;
   border-radius: 25px;
+  margin: 25vh auto;
+  
+
 }
 
 h1 {
