@@ -25,7 +25,7 @@ const Board = props => {
     }
 
     if (completed.length > 10) {
-      resetCompletedAfter(2000)
+      resetCompletedAfter(4000)
     }
 
  console.log(completed)
