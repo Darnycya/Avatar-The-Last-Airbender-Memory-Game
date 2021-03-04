@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
-import MyTimer from '../MyTimer/MyStopwatch';
 import './Board.css';
 
 const Board = props => {
@@ -72,7 +71,7 @@ const Board = props => {
 
   return (
     <>
-       <MyTimer />
+       
     <div className="Board">
       {cards.map(card => (
         <Card {...card} onClick={onCardClick(card)} key={card.id} />

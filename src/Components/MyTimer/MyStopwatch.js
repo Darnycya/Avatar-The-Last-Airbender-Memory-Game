@@ -16,11 +16,11 @@ function MyStopwatch() {
 
 
   return (
-  <div style={{textAlign: 'center'}}>
-      <div className="div-timer">
+  <div className="div-timer" style={{textAlign: 'center'}}>
+      <div>
         <span>{hours}:</span><span>{minutes}:</span><span>{seconds}</span>
       </div>
-      <p>{isRunning ? 'Running' : 'Not running'}</p>
+      {/* <p>{isRunning ? 'Running' : 'Not running'}</p> */}
       <button className="timer" onClick={start}>Start</button>
       <button className="timer" onClick={pause}>Pause</button>
       <button className="timer" onClick={reset}>Reset</button>
