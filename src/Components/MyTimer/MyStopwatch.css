@@ -13,9 +13,26 @@ p {
   color:white;
 }
 
-.timer {
-background-color: orange;
+.timer-start {
+background-color: green;
 border-radius: 50%;
 padding: 10px;
 margin: 5px;
+border: 2px white solid;
 }
+
+.timer-pause {
+  background-color:yellow;
+  border-radius: 50%;
+  padding: 10px;
+  margin: 5px;
+  border: 2px white solid;
+  }
+
+  .timer-reset {
+    background-color: red;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+    border: 2px white solid;
+    }

@@ -21,9 +21,9 @@ function MyStopwatch(props) {
         <span>{hours}:</span><span>{minutes}:</span><span>{seconds}</span>
       </div>
       {/* <p>{isRunning ? 'Running' : 'Not running'}</p> */}
-      <button className="timer" onClick={start}>Start</button>
-      <button className="timer" onClick={pause}>Pause</button>
-      <button className="timer" onClick={reset}>Reset</button>
+      <button className="timer-start" onClick={start}>Start</button>
+      <button className="timer-pause" onClick={pause}>Pause</button>
+      <button className="timer-reset" onClick={reset}>Reset</button>
     </div>
   );
 }
