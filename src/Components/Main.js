@@ -8,7 +8,6 @@ import Toph from '../Assets/Images/Toph.jpg'
 import Aang from '../Assets/Images/Aang.jpg'
 import backImg from '../Assets/Images/Logo.jpg'
 import Iroh_smiling from '../Assets/Images/Iroh_smiling.png'
-// import kyoshi from '../Assets/Images/kyoshi.jpg'
 import Mai from '../Assets/Images/Mai.png'
 import momo from '../Assets/Images/momo.jpg'
 import Tylee from '../Assets/Images/Tylee.png'
@@ -40,10 +39,10 @@ function buildCards() {
     })
     return [...result, getCard(), getCard()]
   }, [])
-  return suffle(cards)
+  return shuffle(cards)
 }
 
-function suffle(arr) {
+function shuffle(arr) {
   let len = arr.length
   for (let i = 0; i < len; i++) {
     let randomIdx = Math.floor(Math.random() * len)
