@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-// import Header from '../Header/Header'
-import Card from '../Card/Card'
-import './Board.css'
+import React, { useState, useEffect } from 'react';
+import Card from '../Card/Card';
+import MyTimer from '../MyTimer/MyStopwatch';
+import './Board.css';
 
 const Board = props => {
   const [cards, setCards] = useState(props.cards)
@@ -72,7 +72,7 @@ const Board = props => {
 
   return (
     <>
-       {/* <Header /> */}
+       <MyTimer />
     <div className="Board">
       {cards.map(card => (
         <Card {...card} onClick={onCardClick(card)} key={card.id} />
