@@ -2,7 +2,7 @@ import React from 'react';
 import { useStopwatch } from 'react-timer-hook';
 import './MyStopwatch.css';
 
-function MyStopwatch() {
+function MyStopwatch(props) {
   const {
     seconds,
     minutes,
