@@ -20,10 +20,11 @@ function MyStopwatch(props) {
       <div>
         <span>{hours}:</span><span>{minutes}:</span><span>{seconds}</span>
       </div>
-      {/* <p>{isRunning ? 'Running' : 'Not running'}</p> */}
+      
       <button className="timer-start" onClick={start}>Start</button>
       <button className="timer-pause" onClick={pause}>Pause</button>
       <button className="timer-reset" onClick={reset}>Reset</button>
+    
     </div>
   );
 }
