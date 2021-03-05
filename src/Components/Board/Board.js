@@ -2,12 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import './Board.css';
 import MyTimer from '../MyTimer/MyStopwatch';
+import Modal from '../Modal/Modal';
+import useModal from '../Modal/useModal';
 
 const Board = props => {
   const [cards, setCards] = useState(props.cards)
   const [checkers, setCheckers] = useState([])
-  const [completed, setCompleted] = useState([])
+ 
 
+
+  const {isShowing, toggle} = useModal();
+
+  
 
   const onCardClick = card => () => {
     if (checkersFull(checkers) || cardAlreadyInCheckers(checkers, card))
@@ -27,6 +33,7 @@ const Board = props => {
 
     if (completed.length > 10) {
       resetCompletedAfter(4000)
+      
     }
 
  console.log(completed)
@@ -69,16 +76,35 @@ const Board = props => {
     setCards(newCards)
   }, [checkers, completed])
 
+  
  
+
 
   return (
     <>
-       <MyTimer />
+      <MyTimer />
+      
     <div className="Board">
       {cards.map(card => (
         <Card {...card} onClick={onCardClick(card)} key={card.id} />
       ))}
       </div>
+
+
+      
+
+
+      <div className="App">
+      <button className="button-default" onClick={toggle}>Show Modal</button>
+      <Modal
+        isShowing={isShowing}
+        hide={toggle}
+      />
+      </div>
+      
+
+
+
       </>
   )
 }

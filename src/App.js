@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route } from "react-router-dom";
 import HomePage from "./Components/HomePage/HomePage";
 import Main from "./Main";
@@ -8,20 +8,27 @@ import Main from "./Main";
 
 
 
-function App() {
+
+class App extends Component {
+
   
-  return (
-    <>
-      <Route path="/" exact>
-        <HomePage />
-      </Route>
-      <Route path="/gamepage">
+  
+
+  render() {
+    return (
+      <>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
+        <Route path="/gamepage">
       
-        <Main />
-      </Route>
+          <Main />
+
+        </Route>
       
-    </>
-  );
+      </>
+    );
+  }
 }
 
 export default App;
