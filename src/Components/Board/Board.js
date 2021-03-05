@@ -8,6 +8,7 @@ const Board = props => {
   const [checkers, setCheckers] = useState([])
   const [completed, setCompleted] = useState([])
 
+
   const onCardClick = card => () => {
     if (checkersFull(checkers) || cardAlreadyInCheckers(checkers, card))
       return

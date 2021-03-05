@@ -1,12 +1,15 @@
-import React from 'react'
-import { Route } from "react-router-dom"
-import HomePage from "./Components/HomePage/HomePage"
-import Main from "./Main"
+import React from 'react';
+import { Route } from "react-router-dom";
+import HomePage from "./Components/HomePage/HomePage";
+import Main from "./Main";
+
+
 
 
 
 
 function App() {
+  
   return (
     <>
       <Route path="/" exact>
