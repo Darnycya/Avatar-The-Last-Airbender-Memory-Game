@@ -34,7 +34,7 @@ p {
 .button-font {
 color:black;
 margin: auto;
-margin-left: -5px;
+margin-left: -2px;
 }
 
 
@@ -49,11 +49,6 @@ margin-left: -5px;
     background-color: white;
 }
 
-input {
-  margin-left: 35%;
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
 
 @media all and (max-width: 425px) {
 
