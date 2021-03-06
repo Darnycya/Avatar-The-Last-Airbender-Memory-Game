@@ -15,7 +15,7 @@ const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <img src="https://res.cloudinary.com/darnycya/image/upload/c_scale,w_450/v1614972962/YouWon_swaqtv.png"/>
+        <img alt="you-won-aang" src="https://res.cloudinary.com/darnycya/image/upload/c_scale,w_450/v1614972962/YouWon_swaqtv.png"/>
       </div>
     </div>
   </React.Fragment>, document.body
