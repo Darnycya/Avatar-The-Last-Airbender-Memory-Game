@@ -32,9 +32,12 @@ const Board = props => {
     }
 
     if (completed.length >= 11) {
-      resetCompletedAfter(4000)
-      toggle(2000);
+      resetCompletedAfter(4000);
+      toggle();
+     
     }
+
+  
 
  console.log(completed)
 
@@ -95,7 +98,6 @@ const Board = props => {
 
 
       <div className="App">
-      <button className="button-default" onClick={toggle}>Show Modal</button>
       <Modal
         isShowing={isShowing}
         hide={toggle}
