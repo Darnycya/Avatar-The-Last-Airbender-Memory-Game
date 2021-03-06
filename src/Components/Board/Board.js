@@ -8,7 +8,7 @@ import useModal from '../Modal/useModal';
 const Board = props => {
   const [cards, setCards] = useState(props.cards)
   const [checkers, setCheckers] = useState([])
- 
+  const [completed, setCompleted] = useState([])
 
 
   const {isShowing, toggle} = useModal();
@@ -31,9 +31,9 @@ const Board = props => {
       resetCheckersAfter(1000)
     }
 
-    if (completed.length > 10) {
+    if (completed.length >= 11) {
       resetCompletedAfter(4000)
-      
+      toggle(2000);
     }
 
  console.log(completed)
