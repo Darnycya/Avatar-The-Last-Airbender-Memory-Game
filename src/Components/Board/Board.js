@@ -30,13 +30,15 @@ const Board = props => {
     if (checkersFull(newCheckers)) {
       resetCheckersAfter(1000)
     }
+ 
+    
+      if (completed.length >= 11) {
+        resetCompletedAfter(4000)
+        toggle();
+      }
 
-    if (completed.length >= 11) {
-      resetCompletedAfter(4000);
-      toggle();
-     
-    }
-
+      
+    
   
 
  console.log(completed)
@@ -45,7 +47,9 @@ const Board = props => {
       setTimeout(() => {
      setCompleted([])
    }, time)
- }
+    }
+    
+   
 
     function validateCheckers(checkers){
       return checkers.length === 2 &&
@@ -80,7 +84,9 @@ const Board = props => {
   }, [checkers, completed])
 
   
- 
+  
+
+
 
 
   return (
@@ -93,10 +99,6 @@ const Board = props => {
       ))}
       </div>
 
-
-      
-
-
       <div className="App">
       <Modal
         isShowing={isShowing}
@@ -104,9 +106,6 @@ const Board = props => {
       />
       </div>
       
-
-
-
       </>
   )
 }
