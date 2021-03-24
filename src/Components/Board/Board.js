@@ -32,10 +32,11 @@ const Board = props => {
     }
  
     
-      if (completed.length >= 12) {
+      if (completed.length >= 11) {
         resetCompletedAfter(4000)
         toggle();
       }
+      console.log(completed)
     
 
     function resetCompletedAfter(time) {

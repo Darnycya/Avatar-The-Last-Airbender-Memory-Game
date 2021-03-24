@@ -28,7 +28,10 @@ export default Main
 
 function buildCards() {
   let id = 0
-  const images = {Aang, Appa, Katara, PrinceZuko, Sokka, Toph, Iroh_smiling, Mai, momo, Tylee, Azulaa, Bumi }
+  const images = {
+    Aang, Appa, Katara, PrinceZuko,
+    Sokka, Toph, Iroh_smiling, Mai, momo, Tylee, Azulaa, Bumi
+  }
   const cards = Object.keys(images).reduce((result, item) => {
     const getCard = () => ({
       id: id++,
