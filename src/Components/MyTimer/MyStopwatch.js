@@ -7,7 +7,6 @@ function MyStopwatch(props) {
     seconds,
     minutes,
     hours,
-    isRunning,
     start,
     pause,
     reset,
