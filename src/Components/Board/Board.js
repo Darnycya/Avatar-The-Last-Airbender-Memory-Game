@@ -36,7 +36,7 @@ const Board = props => {
         resetCompletedAfter(4000)
         toggle();
       }
-      console.log(completed)
+    
     
 
     function resetCompletedAfter(time) {
