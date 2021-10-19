@@ -77,7 +77,7 @@ const Board = props => {
         completed.includes(card.type),
     }))
     setCards(newCards)
-  }, [checkers, completed])
+  }, [cards, checkers, completed])
 
   
   
