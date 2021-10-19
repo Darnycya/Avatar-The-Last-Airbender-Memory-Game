@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
 
 .main {
   width: 800px;
@@ -8,8 +9,7 @@
   border-style: solid;
   border-radius: 25px;
   margin: 25vh auto;
-  
-
+  border-width: 10px;
 }
 
 
@@ -22,13 +22,17 @@ h1 {
   text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px orange, 0 0 20px orange, 0 0 25px #e60073, 0 0 25px #e60073, 0 0 25px #e60073;
 }
 
+.objective {
+  width: 700px;
+  margin-top: -10px;
+  margin-left: 10px;
+  margin: 1vh auto;
+}
 
 p {
   color: white;
   font-size: 15px;
-  margin-top: -10px;
-  margin-left: 10px;
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 .button-font {
@@ -56,6 +60,7 @@ margin-left: -2px;
     margin-left: 10px;
     margin-top: 250px;
     width: 350px;
+    border-width: 10px;
   }
 
   h1 {
@@ -66,11 +71,17 @@ margin-left: -2px;
     font-family: 'Fredoka One', Impact;
   }
 
+  .objective {
+    width: 700px;
+    margin-top: -10px;
+    margin-left: 10px;
+    margin: 1vh auto;
+  }
+  
   p {
     color: white;
     font-size: 18px;
-    margin-top: -10px;
-    margin-left: 10px;
+    font-family: 'Roboto Slab', serif;
   }
 
   button {
