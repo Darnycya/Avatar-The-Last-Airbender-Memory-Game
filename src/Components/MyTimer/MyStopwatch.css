@@ -1,6 +1,6 @@
 .div-timer {
 margin-top: 38vh;
-margin-left: -175vh;
+margin: -7vh auto;
 }
 
 span{
@@ -51,4 +51,14 @@ outline: none;
 
     .timer-reset:active {
       box-shadow: 10px 5px 5px rgb(97, 26, 26)
+    }
+
+    @media all and (max-width: 1200px) {
+  
+     
+      
+      
+    
+    
+    
     }
