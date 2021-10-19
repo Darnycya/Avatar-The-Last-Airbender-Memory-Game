@@ -1,5 +1,4 @@
 .div-timer {
-margin-top: 38vh;
 margin: -7vh auto;
 }
 
@@ -53,12 +52,17 @@ outline: none;
       box-shadow: 10px 5px 5px rgb(97, 26, 26)
     }
 
+
     @media all and (max-width: 1200px) {
   
-     
-      
-      
-    
-    
-    
+
+      .div-timer {
+        margin: -10vh auto;
+        }
+ 
+  
+  
+
+
+
     }
