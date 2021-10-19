@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
 import './Board.css';
-import MyTimer from '../MyTimer/MyStopwatch';
+// import MyTimer from '../MyTimer/MyStopwatch';
 import Modal from '../Modal/Modal';
 import useModal from '../Modal/useModal';
 
@@ -87,7 +87,7 @@ const Board = props => {
 
   return (
     <>
-      <MyTimer />
+      {/* <MyTimer /> */}
       
     <div className="Board">
       {cards.map(card => (
