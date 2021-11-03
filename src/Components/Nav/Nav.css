@@ -1,10 +1,15 @@
 .navbar{
 background-image: linear-gradient(rgba(0, 0, 0, 0.481), rgba(60, 63, 65, 0.769));
-margin-top: -82px;
+margin-top: -50px;
 display: flex;
 justify-content:space-between;
 }
 
 .welcome{
   margin-left: 20px;
+}
+
+.welcome-text{
+  font-size: 30px;
+  margin-top:10px;
 }

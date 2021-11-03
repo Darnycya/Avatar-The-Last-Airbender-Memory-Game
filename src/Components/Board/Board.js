@@ -3,7 +3,6 @@ import Card from '../Card/Card';
 import './Board.css';
 import Modal from '../Modal/Modal';
 import useModal from '../Modal/useModal';
-import Nav from '../Nav/Nav';
 
 const Board = props => {
   const [cards, setCards] = useState(props.cards)
@@ -88,8 +87,6 @@ const Board = props => {
 
   return (
     <>
-      
-    <Nav />
     <div className="Board">
       {cards.map(card => (
         <Card {...card} onClick={onCardClick(card)} key={card.id} />
@@ -102,7 +99,6 @@ const Board = props => {
         hide={toggle}
       />
       </div>
-      
       </>
   )
 }
