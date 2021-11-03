@@ -1,5 +1,6 @@
 .div-timer {
-margin: -7vh auto;
+display: flex;
+margin-right: 20px;
 }
 
 span{
@@ -8,15 +9,17 @@ span{
   
 }
 
-p {
+.timer-text {
   color:white;
+  font-size: 10px;
+}
+
+.timer-button{
+  width: 30px;
+  height: 30px;
 }
 
 .timer-start {
-background-color: green;
-border-radius: 50%;
-padding: 10px;
-margin: 5px;
 border: 2px white solid;
 outline: none;
 }
@@ -25,11 +28,8 @@ outline: none;
   box-shadow: 10px 5px 5px rgb(24, 65, 24);
 }
 
+
 .timer-pause {
-  background-color:yellow;
-  border-radius: 50%;
-  padding: 10px;
-  margin: 5px;
   border: 2px white solid;
   outline: none;
  
@@ -40,10 +40,6 @@ outline: none;
   }
 
   .timer-reset {
-    background-color: red;
-    border-radius: 50%;
-    padding: 10px;
-    margin: 5px;
     border: 2px white solid;
     outline: none;
     }

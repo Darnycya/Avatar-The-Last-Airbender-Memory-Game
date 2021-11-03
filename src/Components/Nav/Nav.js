@@ -5,6 +5,9 @@ import './Nav.css'
 export default function Nav() {
   return (
     <div className="navbar">
+      <div className="welcome">
+        <p>Hi, Darnycya.</p>
+        </div>
       <MyTimer />
     </div>
   )
