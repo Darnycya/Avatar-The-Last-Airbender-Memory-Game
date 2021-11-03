@@ -1,27 +1,24 @@
 .div-timer {
 display: flex;
-margin-right: 20px;
+margin: 11px 20px;
 }
 
 span{
-  font-size: 30px;
+  font-size: 20px;
   color: white;
-  
+  font-family: 'Open Sans', sans-serif;
 }
 
-.timer-text {
-  color:white;
-  font-size: 10px;
+.timer-div{
+  margin-right: 10px;
 }
 
+.button-div{
+  margin-top: 2px;
+}
 .timer-button{
-  width: 30px;
-  height: 30px;
-}
-
-.timer-start {
-border: 2px white solid;
-outline: none;
+  width: 20px;
+  height: 20px;
 }
 
 .timer-start:active {
@@ -29,20 +26,9 @@ outline: none;
 }
 
 
-.timer-pause {
-  border: 2px white solid;
-  outline: none;
- 
-  }
-
   .timer-pause:active {
     box-shadow: 10px 5px 5px rgb(113, 113, 2)
   }
-
-  .timer-reset {
-    border: 2px white solid;
-    outline: none;
-    }
 
     .timer-reset:active {
       box-shadow: 10px 5px 5px rgb(97, 26, 26)
