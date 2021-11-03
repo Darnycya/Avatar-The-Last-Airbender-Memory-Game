@@ -2,7 +2,7 @@ import React from 'react';
 import { useStopwatch } from 'react-timer-hook';
 import './MyStopwatch.css';
 
-function MyStopwatch(props) {
+export default function MyStopwatch(props) {
   const {
     seconds,
     minutes,
@@ -27,10 +27,3 @@ function MyStopwatch(props) {
   );
 }
 
-export default function App() {
-  return (
-    <div>
-      <MyStopwatch />
-    </div>
-  );
-}
