@@ -21,18 +21,9 @@ span{
   height: 20px;
 }
 
-.timer-start:active {
-  box-shadow: 10px 5px 5px rgb(24, 65, 24);
+.timer-button:target {
+  background-color: white;
 }
-
-
-  .timer-pause:active {
-    box-shadow: 10px 5px 5px rgb(113, 113, 2)
-  }
-
-    .timer-reset:active {
-      box-shadow: 10px 5px 5px rgb(97, 26, 26)
-    }
 
 
     @media all and (max-width: 1200px) {
