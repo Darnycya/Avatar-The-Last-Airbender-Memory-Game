@@ -76,6 +76,7 @@ const Board = props => {
         completed.includes(card.type),
     }))
     setCards(newCards)
+    // eslint-disable-next-line
   }, [checkers, completed])
   
 
