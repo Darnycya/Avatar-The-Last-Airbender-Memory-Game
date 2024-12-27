@@ -1,29 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStopwatch } from 'react-timer-hook';
 import './MyStopwatch.css';
 
-export default function MyStopwatch(props) {
-  const {
-    seconds,
-    minutes,
-    hours,
-    start,
-    pause,
-    reset,
-  } = useStopwatch({ autoStart: false });
+export default function MyStopwatch({ setStartFunction }) {
+  const { seconds, minutes, hours, start } = useStopwatch({ autoStart: false });
 
+  // Pass the start function to the parent component
+  useEffect(() => {
+    if (setStartFunction) {
+      setStartFunction(start);
+    } else {
+      console.error("setStartFunction is not defined");
+    }
+  }, [setStartFunction, start]);
 
   return (
-  <div className="div-timer" style={{textAlign: 'center'}}>
+    <div className="div-timer">
       <div className="timer-div">
-        <span>{hours}:</span><span>{minutes}:</span><span>{seconds}</span>
-      </div>
-      <div className="button-div">
-      <img className="timer-button" alt="play" onClick={start} src="https://res.cloudinary.com/darnycya/image/upload/v1635909257/Play_rrzfp3.png"/>
-      <img className="timer-button" alt="pause" onClick={pause} src="https://res.cloudinary.com/darnycya/image/upload/v1635909257/Pause_xopdxv.png"/>
-      <img className="timer-button" alt="stop" onClick={reset} src="https://res.cloudinary.com/darnycya/image/upload/v1635909257/Stop_xzeszr.png"/>
+        <span>{String(hours).padStart(2, '0')}:</span>
+        <span>{String(minutes).padStart(2, '0')}:</span>
+        <span>{String(seconds).padStart(2, '0')}</span>
       </div>
     </div>
   );
 }
-

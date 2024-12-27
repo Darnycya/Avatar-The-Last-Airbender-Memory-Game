@@ -1,41 +1,44 @@
 .div-timer {
-display: flex;
-margin: 11px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  background: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-span{
-  font-size: 20px;
-  color: white;
-  font-family: 'Open Sans', sans-serif;
+.timer-div {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ffcc; /* Neon-like color for digital effect */
+  font-family: 'Courier New', Courier, monospace; /* Digital style font */
 }
 
-.timer-div{
-  margin-right: 10px;
+.timer-button {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.button-div{
-  margin-top: 2px;
-}
-.timer-button{
-  width: 20px;
-  height: 20px;
+.timer-button:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
-.timer-button:target {
-  background-color: white;
+.timer-button:active {
+  transform: scale(0.95); /* Slightly shrink on click */
 }
 
-
-    @media all and (max-width: 1200px) {
-  
-
-      .div-timer {
-        margin: -10vh auto;
-        }
- 
-  
-  
-
-
-
-    }
+@media all and (max-width: 1200px) {
+  .div-timer {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .timer-div {
+    font-size: 20px;
+  }
+}
