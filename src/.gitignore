@@ -6,7 +6,7 @@
 .pnp.js
 
 # Ignore .cache directories (used by tools like webpack)
-node_modules/.cache/
+/node_modules/.cache/
 
 # Ignore development build files
 *.log
