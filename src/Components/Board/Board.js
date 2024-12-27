@@ -28,12 +28,14 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
 
   const onCardClick = card => () => {
 
-    if (checkersFull(checkers) || cardAlreadyInCheckers(checkers, card)) return;
-
-    if (!isGameStarted) {
+    // Start the timer when the first card is clicked
+    if (!isFirstCardClicked && !isGameStarted) {
       startTimer(); 
       setIsGameStarted(true); 
+      setIsFirstCardClicked(true);
     }
+
+    if (checkersFull(checkers) || cardAlreadyInCheckers(checkers, card)) return;
 
     const newCheckers = [...checkers, card];
     setCheckers(newCheckers);
@@ -71,6 +73,7 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
   };
 
   const handleModalClose = () => {
+    // Reset game state after modal close
     const resetCards = cards.map(card => ({
       ...card,
       flipped: false,
@@ -79,9 +82,10 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
     setCompleted([]); 
     setCheckers([]); 
     setIsGameCompleted(false); 
-    setTime(0);
-    setIsFirstCardClicked(false);
-    toggle();  
+    setTime(0);  // Reset time to 0
+    setIsFirstCardClicked(false);  // Reset the first card clicked flag
+    setIsGameStarted(false);  // Reset game start flag
+    toggle();  // Close the modal
   };
 
   // Build Cards Function
