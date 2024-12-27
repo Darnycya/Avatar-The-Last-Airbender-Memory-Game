@@ -21,7 +21,7 @@ const Modal = ({ isShowing, hide }) =>
                   className="modal-close-button"
                   data-dismiss="modal"
                   aria-label="Close"
-                  onClick={hide} // Call hide function to close modal and reset cards
+                  onClick={hide}
                 >
                   <span aria-hidden="true">&times;</span>
                 </button>

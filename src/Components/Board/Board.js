@@ -28,7 +28,6 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
 
   const onCardClick = card => () => {
 
-    // Start the timer when the first card is clicked
     if (!isFirstCardClicked && !isGameStarted) {
       startTimer(); 
       setIsGameStarted(true); 
@@ -69,11 +68,10 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
   };
 
   const openModal = () => {
-    toggle(); // Open the modal
+    toggle();
   };
 
   const handleModalClose = () => {
-    // Reset game state after modal close
     const resetCards = cards.map(card => ({
       ...card,
       flipped: false,
@@ -82,13 +80,13 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
     setCompleted([]); 
     setCheckers([]); 
     setIsGameCompleted(false); 
-    setTime(0);  // Reset time to 0
-    setIsFirstCardClicked(false);  // Reset the first card clicked flag
-    setIsGameStarted(false);  // Reset game start flag
-    toggle();  // Close the modal
+    setTime(0);
+    setIsFirstCardClicked(false);  
+    setIsGameStarted(false); 
+    toggle();  
   };
 
-  // Build Cards Function
+
   function buildCards() {
     let id = 0;
     const images = {
@@ -107,7 +105,6 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
     return shuffle(cards);
   }
 
-  // Shuffle Function
   function shuffle(arr) {
     let len = arr.length;
     for (let i = 0; i < len; i++) {
