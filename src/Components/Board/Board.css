@@ -1,42 +1,27 @@
-.Board {
-  width: 900px;
+.board {
   display: flex;
   align-items: center;
-  flex-wrap: wrap; 
-  margin: 0 auto;
-  margin-bottom: -100px;
-  
-  
- 
+  justify-content: center; 
 }
 
-body {
-  background: url(https://i.pinimg.com/originals/78/af/59/78af59d62c9edba37a1f4a66055f63da.jpg) no-repeat center center fixed; ;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
- padding-top: 50px;
-  
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  padding: 50px 10px;
 }
-
-
-
-@media all and (max-width: 1200px) {
   
-  .Board {
-    height: 700px;
-    width: 1000px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 10vh auto;
-   
+  body {
+    background: url(https://i.pinimg.com/originals/78/af/59/78af59d62c9edba37a1f4a66055f63da.jpg) no-repeat center center fixed; ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 50px;
   }
-  
-  
 
-
-
-}
+  @media (min-width: 730px) {
+    .card-container {
+      padding: 10px;
+    }
+  }

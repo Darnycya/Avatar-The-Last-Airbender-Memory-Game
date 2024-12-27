@@ -23,14 +23,14 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
   const [checkers, setCheckers] = useState([]);
   const [completed, setCompleted] = useState([]);
   const { isShowing, toggle } = useScoreBoard();
-  const [isGameCompleted, setIsGameCompleted] = useState(false); 
+  const [isGameCompleted, setIsGameCompleted] = useState(false);
   const [isFirstCardClicked, setIsFirstCardClicked] = useState(false);
 
   const onCardClick = card => () => {
 
     if (!isFirstCardClicked && !isGameStarted) {
-      startTimer(); 
-      setIsGameStarted(true); 
+      startTimer();
+      setIsGameStarted(true);
       setIsFirstCardClicked(true);
       setIsPaused(false);
     }
@@ -83,13 +83,13 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
       flipped: false,
     }));
     setCards(resetCards);
-    setCompleted([]); 
-    setCheckers([]); 
-    setIsGameCompleted(false); 
+    setCompleted([]);
+    setCheckers([]);
+    setIsGameCompleted(false);
     setTime(0);
-    setIsFirstCardClicked(false);  
-    setIsGameStarted(false); 
-    toggle();  
+    setIsFirstCardClicked(false);
+    setIsGameStarted(false);
+    toggle();
   };
 
 
@@ -97,8 +97,8 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
     let id = 0;
     const images = {
       Aang, Appa, Katara,
-    //   PrinceZuko,
-    // Sokka, Toph, Iroh_smiling, Mai, momo, Tylee, Azulaa, Bumi
+      PrinceZuko,
+      Sokka, Toph, Iroh_smiling, Mai, momo, Tylee, Azulaa, Bumi
     };
     const cards = Object.keys(images).reduce((result, item) => {
       const getCard = () => ({
@@ -133,9 +133,9 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
     setCards(newCards);
 
     if (completed.length === 3 && !isGameCompleted) {
-      setIsGameCompleted(true); 
+      setIsGameCompleted(true);
       stopTimer();
-      openModal(); 
+      openModal();
     }
 
     // eslint-disable-next-line
@@ -143,11 +143,14 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
 
   return (
     <>
-      <div className="Board">
-        {cards.map(card => (
-          <Card {...card} onClick={onCardClick(card)} key={card.id} />
-        ))}
+      <div className="board">
+        <div className="card-container">
+          {cards.map(card => (
+            <Card alt={card} {...card} onClick={onCardClick(card)} key={card.id} />
+          ))}
+        </div>
       </div>
+
 
       <div className="App">
         <ScoreBoard isShowing={isShowing} hide={handleModalClose} />
