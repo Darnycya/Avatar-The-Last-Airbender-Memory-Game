@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  display: flex; /* Flexbox for centering */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
+  overflow: hidden; /* Ensure no unwanted scrolling */
+  outline: 0;
+}
+
+.modal {
+  position: relative;
+  z-index: 100;
+  background: black;
+  margin: 0; /* Remove default margin */
+  border-radius: 3px;
+  max-width: 450px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for better visuals */
+}
+
+.modal-header {
+  position: absolute; /* Position it relative to the modal */
+  top: 0.5rem; /* Adjust as needed */
+  right: 0.5rem; /* Adjust as needed */
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; /* Ensure alignment */
+}
+
+.modal-close-button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff; /* White close button */
+  cursor: pointer;
+  border: none;
+  background: none; /* Ensure no background */
+  padding: 0.2rem; /* Adjust padding for better fit */
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  opacity: 1; /* Make it fully opaque on hover/focus */
+  outline: none; /* Remove focus outline */
+}
+
+button {
+  font-size: .9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+  padding: .3rem 1rem;
+  margin-left: .5rem;
+}
+
+.button-default {
+  background: #247BA0;
+  color: #fff;
+}

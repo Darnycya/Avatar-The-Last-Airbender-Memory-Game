@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/Card';
-import Modal from '../Modal/Modal';
-import useModal from '../Modal/useModal';
+import ScoreBoard from '../ScoreBoard/ScoreBoard';
+import useScoreBoard from '../ScoreBoard/useScoreBoard';
 import './Board.css';
 import Appa from '../../Assets/Images/Appa.png';
 import Katara from '../../Assets/Images/Katara.jpeg';
@@ -22,7 +22,7 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
   const [cards, setCards] = useState(deck);
   const [checkers, setCheckers] = useState([]);
   const [completed, setCompleted] = useState([]);
-  const { isShowing, toggle } = useModal();
+  const { isShowing, toggle } = useScoreBoard();
   const [isGameCompleted, setIsGameCompleted] = useState(false); 
   const [isFirstCardClicked, setIsFirstCardClicked] = useState(false);
 
@@ -142,7 +142,7 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeT
       </div>
 
       <div className="App">
-        <Modal isShowing={isShowing} hide={handleModalClose} />
+        <ScoreBoard isShowing={isShowing} hide={handleModalClose} />
       </div>
     </>
   );

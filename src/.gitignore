@@ -2,13 +2,11 @@
 
 # dependencies
 /node_modules
-/node_modules/.cache
-/node_modules/.cache/default-development
 /.pnp
 .pnp.js
 
 # Ignore .cache directories (used by tools like webpack)
-/.cache
+node_modules/.cache/
 
 # Ignore development build files
 *.log
