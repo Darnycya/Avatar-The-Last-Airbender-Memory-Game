@@ -17,7 +17,7 @@ import Tylee from '../../Assets/Images/Tylee.png';
 import Azulaa from '../../Assets/Images/Azulaa.png';
 import Bumi from '../../Assets/Images/Bumi.jpeg';
 
-const Board = props => {
+const Board = ({ startTimer, handleGameCompletion, isGameStarted, setIsGameStarted }) => {
   const deck = buildCards();
   const [cards, setCards] = useState(deck);
   const [checkers, setCheckers] = useState([]);
@@ -28,6 +28,11 @@ const Board = props => {
   const onCardClick = card => () => {
 
     if (checkersFull(checkers) || cardAlreadyInCheckers(checkers, card)) return;
+
+    if (!isGameStarted) {
+      startTimer(); 
+      setIsGameStarted(true); 
+    }
 
     const newCheckers = [...checkers, card];
     setCheckers(newCheckers);

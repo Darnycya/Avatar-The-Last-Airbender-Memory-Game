@@ -10,6 +10,54 @@ export default function App() {
     return savedName ? { name: savedName } : { name: '' };
   });
 
+  const [time, setTime] = useState(0); // Timer state in seconds
+  const [formattedTime, setFormattedTime] = useState('00:00:00'); // Formatted time for display
+  const [isPaused, setIsPaused] = useState(false); // Pause state
+  const [intervalId, setIntervalId] = useState(null); // Timer interval ID
+
+  const [isGameStarted, setIsGameStarted] = useState(false); // Track if game has started
+  const [isGameCompleted, setIsGameCompleted] = useState(false); // Track if game is complete
+
+  // Format the time in hh:mm:ss format
+  useEffect(() => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    const hours = Math.floor(minutes / 60);
+    setFormattedTime(`${String(hours).padStart(2, '0')}:${String(minutes % 60).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
+  }, [time]);
+
+  // Start the timer
+  const startTimer = () => {
+    if (intervalId) return; // Prevent multiple intervals
+    const id = setInterval(() => {
+      setTime(prevTime => prevTime + 1);
+    }, 1000);
+    setIntervalId(id);
+  };
+
+  // Pause the timer
+  const pauseTimer = () => {
+    setIsPaused(true);
+    clearInterval(intervalId); // Stop the interval
+  };
+
+  // Resume the timer
+  const resumeTimer = () => {
+    setIsPaused(false);
+    startTimer();
+  };
+
+  // Stop the timer when game is complete
+  const stopTimer = () => {
+    clearInterval(intervalId);
+  };
+
+  const handleGameCompletion = () => {
+    setIsGameCompleted(true);
+    stopTimer(); // Stop the timer when the game is completed
+  };
+
+  // Store the player name in localStorage
   useEffect(() => {
     localStorage.setItem('playerName', inputName.name);
   }, [inputName]);
@@ -42,10 +90,20 @@ export default function App() {
         </div>
       </Route>
       <Route path="/gamepage">
-      <Nav
-    {...inputName}
-  />
-  <Board />
+        <Nav 
+          name={inputName.name}
+          formattedTime={formattedTime}
+          isPaused={isPaused}
+          pauseTimer={pauseTimer}
+          resumeTimer={resumeTimer}
+          time={time}
+        />
+        <Board 
+          startTimer={startTimer}
+          handleGameCompletion={handleGameCompletion}
+          isGameStarted={isGameStarted}
+          setIsGameStarted={setIsGameStarted}
+        />
       </Route>
     </>
   );

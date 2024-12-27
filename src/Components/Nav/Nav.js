@@ -1,20 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Nav.css';
 
-export default function Nav(props) {
-  const [nameState, setNameState] = useState(props);
+export default function Nav({
+  name,
+  formattedTime,
+  isPaused,
+  pauseTimer,
+  resumeTimer,
+  time
+}) {
 
-  useEffect(() => {
-    setNameState(props);
-  }, [props]);
+  const handlePauseResume = () => {
+    if (isPaused) {
+      resumeTimer();
+    } else {
+      pauseTimer();
+    }
+  };
 
   return (
     <div className="navbar">
-      <div className="welcome">
         <h1 className="welcome-text">
-          Hi {nameState.name}! Let's begin.
+          Hi {name}! Let's begin.
         </h1>
+
+        <div className='timer-container'>
+        <h2 className="timer">{formattedTime}</h2>
+        <button onClick={handlePauseResume} className="pause-button">
+          {isPaused ? 'Resume' : 'Pause'}
+          </button>
+          </div>
       </div>
-    </div>
   );
 }
