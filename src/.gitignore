@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -7,7 +5,7 @@
 
 # Ignore .cache directories (used by tools like webpack)
 /node_modules/.cache/
-node_modules/.cache/
+/.cache/
 
 # Ignore development build files
 *.log
@@ -17,6 +15,7 @@ node_modules/.cache/
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -25,6 +24,47 @@ node_modules/.cache/
 .env.test.local
 .env.production.local
 
+# npm-debug.log*
+# yarn-debug.log*
+# yarn-error.log*
+
+# Babel loader cache
+.babel-loader-cache/
+
+# Webpack cache
+/.webpack/
+/build/
+
+# Vite cache
+.vite/
+
+# Next.js build and cache
+.next/
+/out/
+
+# Parcel cache
+/.parcel-cache/
+
+# Tye caches (if using)
+/.tye/
+
+# TypeScript cache
+/.tsbuildinfo
+
+# Jest cache
+/coverage/
+/jest/
+
+# Storybook build outputs
+/out/
+
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# vscode settings
+.vscode/
+
+# OSX Finder directory settings
+/.DS_Store

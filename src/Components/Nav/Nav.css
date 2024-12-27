@@ -5,8 +5,17 @@ display: flex;
 justify-content:space-between;
 }
 
-.welcome{
+.welcome-text {
   margin-left: 20px;
+  padding: 20px;
+}
+
+.pause-button {
+  background-color: transparent;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding: 0;
 }
 
 .welcome-text{
@@ -17,4 +26,16 @@ justify-content:space-between;
 .timer-container {
   display: flex;
   color: white;
+  padding: 10px;
+  align-items: center;
+}
+
+.pause-logo {
+  width: 10px;
+  height: 10px;
+}
+
+.play-logo {
+  width: 20px;
+  height: 20px;
 }

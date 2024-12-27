@@ -27,7 +27,8 @@ export default function Nav({
         <div className='timer-container'>
         <h2 className="timer">{formattedTime}</h2>
         <button onClick={handlePauseResume} className="pause-button">
-          {isPaused ? 'Resume' : 'Pause'}
+          {isPaused ? <img alt="play-logo" className="play-logo" src="https://www.friidesigns.com/wp-content/uploads/2018/11/white-play-icon-png-6.png"></img> : <img alt="pause-logo" className="pause-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP8Fj86hvAb9q6mbi9pWJU1ZNjmA8MDrWxcA&s"></img>}
+          
           </button>
           </div>
       </div>

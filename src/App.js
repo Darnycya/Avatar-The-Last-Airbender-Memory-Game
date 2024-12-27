@@ -101,7 +101,9 @@ export default function App() {
           isGameStarted={isGameStarted}
           setIsGameStarted={setIsGameStarted}
           pauseTimer={pauseTimer}
+          isPaused={isPaused}
           resumeTimer={resumeTimer}
+          setIsPaused={setIsPaused}
           setTime={setTime}
         />
       </Route>

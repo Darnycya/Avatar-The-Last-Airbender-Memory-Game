@@ -19,7 +19,7 @@ h1 {
   color: orange;
   font-size: 50px;
   font-family: 'lastninja';
-  text-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 5px orange, 0 0 20px orange, 0 0 25px #e60073, 0 0 25px #e60073, 0 0 25px #e60073;
+  text-shadow: 0 0 2px #fff, 0 0 2px #fff, 0 0 2px orange, 0 0 2px orange, 0 0 25px #e60073, 0 0 25px #e60073, 0 0 25px #e60073;
 }
 
 .objective {
@@ -84,9 +84,4 @@ font-size: 15px;
     border-radius: 25px;
     border-width: 10px;
   }
-  
-
-
-
-
 }
