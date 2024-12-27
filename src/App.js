@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Route } from "react-router-dom";
 import Nav from "./Components/Nav/Nav";
 import Board from './Components/Board/Board';
@@ -6,24 +6,10 @@ import './App.css';
 
 export default function App() {
   const [inputName, setInputName] = useState(() => {
-    // Retrieve the saved name from localStorage or set default
     const savedName = localStorage.getItem('playerName');
     return savedName ? { name: savedName } : { name: '' };
   });
 
-  const startRef = useRef(null);
-
-  const setStartFunction = (startFunction) => {
-    startRef.current = startFunction;
-  };
-
-  const startTimer = () => {
-    if (startRef.current) {
-      startRef.current(); // Call the start function from the timer
-    }
-  };
-
-  // Save the inputName to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('playerName', inputName.name);
   }, [inputName]);
@@ -56,8 +42,10 @@ export default function App() {
         </div>
       </Route>
       <Route path="/gamepage">
-        <Nav startTimer={startTimer} setStartFunction={setStartFunction} {...inputName} />
-        <Board startTimer={startTimer} />
+      <Nav
+    {...inputName}
+  />
+  <Board />
       </Route>
     </>
   );

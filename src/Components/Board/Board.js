@@ -22,19 +22,10 @@ const Board = props => {
   const [cards, setCards] = useState(deck);
   const [checkers, setCheckers] = useState([]);
   const [completed, setCompleted] = useState([]);
-  const [isTimerStarted, setIsTimerStarted] = useState(false);
   const { isShowing, toggle } = useModal();
-  const [isGameCompleted, setIsGameCompleted] = useState(false); // Track game completion
+  const [isGameCompleted, setIsGameCompleted] = useState(false); 
 
   const onCardClick = card => () => {
-    if (!isTimerStarted) {
-      setIsTimerStarted(true);
-      if (props.startTimer) {
-        props.startTimer();
-      } else {
-        console.error("startTimer is not defined in props");
-      }
-    }
 
     if (checkersFull(checkers) || cardAlreadyInCheckers(checkers, card)) return;
 
@@ -48,14 +39,6 @@ const Board = props => {
 
     if (checkersFull(newCheckers)) {
       resetCheckersAfter(1000);
-    }
-
-    if (completed.length === 12 && !isGameCompleted) {
-      setIsGameCompleted(true); // Set game completion flag
-      openModal(); // Show the modal when all cards are correct
-      if (props.stopTimer) {
-        props.stopTimer(); // Stop the timer if `stopTimer` is passed as a prop
-      }
     }
 
     function resetCheckersAfter(time) {
@@ -87,11 +70,10 @@ const Board = props => {
       flipped: false,
     }));
     setCards(resetCards);
-    setCompleted([]); // Reset completed matches
-    setCheckers([]); // Reset checkers
-    setIsTimerStarted(false); // Reset timer state
-    setIsGameCompleted(false); // Reset game completion flag
-    toggle(); // Close the modal
+    setCompleted([]); 
+    setCheckers([]); 
+    setIsGameCompleted(false); 
+    toggle(); // 
   };
 
   // Build Cards Function
@@ -133,6 +115,11 @@ const Board = props => {
       flipped: checkers.find(c => c.id === card.id) || completed.includes(card.type),
     }));
     setCards(newCards);
+
+    if (completed.length === 12 && !isGameCompleted) {
+      setIsGameCompleted(true); 
+      openModal(); 
+    }
 
     // eslint-disable-next-line
   }, [checkers, completed]);

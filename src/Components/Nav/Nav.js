@@ -1,10 +1,8 @@
-import React, {useState, useEffect} from 'react'
-import MyStopwatch from '../MyTimer/MyStopwatch';
-import './Nav.css'
-
+import React, { useState, useEffect } from 'react';
+import './Nav.css';
 
 export default function Nav(props) {
-  const [nameState, setNameState] = useState(props)
+  const [nameState, setNameState] = useState(props);
 
   useEffect(() => {
     setNameState(props);
@@ -16,8 +14,7 @@ export default function Nav(props) {
         <h1 className="welcome-text">
           Hi {nameState.name}! Let's begin.
         </h1>
-        </div>
-      <MyStopwatch setStartFunction={props.setStartFunction} />
+      </div>
     </div>
-  )
+  );
 }
