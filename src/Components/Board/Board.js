@@ -52,7 +52,7 @@ const Board = props => {
 
     if (completed.length === 12 && !isGameCompleted) {
       setIsGameCompleted(true); // Set game completion flag
-      toggle(); // Show the modal when all cards are correct
+      openModal(); // Show the modal when all cards are correct
       if (props.stopTimer) {
         props.stopTimer(); // Stop the timer if `stopTimer` is passed as a prop
       }
@@ -75,6 +75,23 @@ const Board = props => {
     function checkersFull(checkers) {
       return checkers.length === 2;
     }
+  };
+
+  const openModal = () => {
+    toggle(); // Open the modal
+  };
+
+  const handleModalClose = () => {
+    const resetCards = cards.map(card => ({
+      ...card,
+      flipped: false,
+    }));
+    setCards(resetCards);
+    setCompleted([]); // Reset completed matches
+    setCheckers([]); // Reset checkers
+    setIsTimerStarted(false); // Reset timer state
+    setIsGameCompleted(false); // Reset game completion flag
+    toggle(); // Close the modal
   };
 
   // Build Cards Function
@@ -117,13 +134,8 @@ const Board = props => {
     }));
     setCards(newCards);
 
-    // Ensure modal triggers only when the game is completed
-    if (completed.length === 12 && !isGameCompleted) {
-      toggle(); // Show the modal when all cards are correct
-    }
-
     // eslint-disable-next-line
-  }, [checkers, completed, isGameCompleted]);
+  }, [checkers, completed]);
 
   return (
     <>
@@ -134,7 +146,7 @@ const Board = props => {
       </div>
 
       <div className="App">
-        <Modal isShowing={isShowing} hide={toggle} />
+        <Modal isShowing={isShowing} hide={handleModalClose} />
       </div>
     </>
   );
