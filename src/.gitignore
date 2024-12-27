@@ -5,6 +5,12 @@
 /.pnp
 .pnp.js
 
+# Ignore .cache directories (used by tools like webpack)
+.cache/
+
+# Ignore development build files
+*.log
+
 # testing
 /coverage
 
