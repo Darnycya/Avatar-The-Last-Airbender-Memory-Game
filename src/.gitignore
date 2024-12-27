@@ -5,7 +5,13 @@
 
 # Ignore .cache directories (used by tools like webpack)
 /node_modules/.cache/
+/node_modules/.cache/*
 /.cache/
+/.cache/*
+
+# Ignore babel loader cache in node_modules
+/node_modules/.cache/babel-loader/
+/node_modules/.cache/default-development/
 
 # Ignore development build files
 *.log
