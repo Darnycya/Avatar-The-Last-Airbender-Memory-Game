@@ -17,13 +17,14 @@ import Tylee from '../../Assets/Images/Tylee.png';
 import Azulaa from '../../Assets/Images/Azulaa.png';
 import Bumi from '../../Assets/Images/Bumi.jpeg';
 
-const Board = ({ startTimer, handleGameCompletion, isGameStarted, setIsGameStarted }) => {
+const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, resumeTimer, isPaused, setTime }) => {
   const deck = buildCards();
   const [cards, setCards] = useState(deck);
   const [checkers, setCheckers] = useState([]);
   const [completed, setCompleted] = useState([]);
   const { isShowing, toggle } = useModal();
   const [isGameCompleted, setIsGameCompleted] = useState(false); 
+  const [isFirstCardClicked, setIsFirstCardClicked] = useState(false);
 
   const onCardClick = card => () => {
 
@@ -78,15 +79,16 @@ const Board = ({ startTimer, handleGameCompletion, isGameStarted, setIsGameStart
     setCompleted([]); 
     setCheckers([]); 
     setIsGameCompleted(false); 
-    toggle(); // 
+    setTime(0);
+    setIsFirstCardClicked(false);
+    toggle();  
   };
 
   // Build Cards Function
   function buildCards() {
     let id = 0;
     const images = {
-      Aang, Appa, Katara, PrinceZuko,
-      Sokka, Toph, Iroh_smiling, Mai, momo, Tylee, Azulaa, Bumi,
+      Aang, Appa
     };
     const cards = Object.keys(images).reduce((result, item) => {
       const getCard = () => ({
@@ -121,8 +123,9 @@ const Board = ({ startTimer, handleGameCompletion, isGameStarted, setIsGameStart
     }));
     setCards(newCards);
 
-    if (completed.length === 12 && !isGameCompleted) {
+    if (completed.length === 2 && !isGameCompleted) {
       setIsGameCompleted(true); 
+      stopTimer();
       openModal(); 
     }
 

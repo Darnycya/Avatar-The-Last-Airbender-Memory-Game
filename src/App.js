@@ -16,7 +16,6 @@ export default function App() {
   const [intervalId, setIntervalId] = useState(null); // Timer interval ID
 
   const [isGameStarted, setIsGameStarted] = useState(false); // Track if game has started
-  const [isGameCompleted, setIsGameCompleted] = useState(false); // Track if game is complete
 
   // Format the time in hh:mm:ss format
   useEffect(() => {
@@ -28,9 +27,9 @@ export default function App() {
 
   // Start the timer
   const startTimer = () => {
-    if (intervalId) return; // Prevent multiple intervals
+    if (intervalId) return; // Prevent multiple intervals if already running
     const id = setInterval(() => {
-      setTime(prevTime => prevTime + 1);
+      setTime(prevTime => prevTime + 1); // Increment time
     }, 1000);
     setIntervalId(id);
   };
@@ -39,22 +38,20 @@ export default function App() {
   const pauseTimer = () => {
     setIsPaused(true);
     clearInterval(intervalId); // Stop the interval
+    setIntervalId(null); // Clear the interval ID
   };
 
   // Resume the timer
   const resumeTimer = () => {
+    if (intervalId) return; // Avoid starting a new interval if one is already running
     setIsPaused(false);
-    startTimer();
+    startTimer(); // Start a new timer if paused
   };
 
   // Stop the timer when game is complete
   const stopTimer = () => {
     clearInterval(intervalId);
-  };
-
-  const handleGameCompletion = () => {
-    setIsGameCompleted(true);
-    stopTimer(); // Stop the timer when the game is completed
+    setIntervalId(null);
   };
 
   // Store the player name in localStorage
@@ -100,9 +97,12 @@ export default function App() {
         />
         <Board 
           startTimer={startTimer}
-          handleGameCompletion={handleGameCompletion}
+          stopTimer={ stopTimer}
           isGameStarted={isGameStarted}
           setIsGameStarted={setIsGameStarted}
+          pauseTimer={pauseTimer}
+          resumeTimer={resumeTimer}
+          setTime={setTime}
         />
       </Route>
     </>
