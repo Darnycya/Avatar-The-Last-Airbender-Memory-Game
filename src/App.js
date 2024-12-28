@@ -70,6 +70,7 @@ export default function App() {
               Once you have found all pairs, you have won the game. You can also use the timer to 
               see how fast you can complete the game.
             </p>
+            <div className='submit-container'>
             <input
               type="text"
               value={inputName.name}
@@ -81,7 +82,8 @@ export default function App() {
               <button className="homepage-button">
                 <p className="button-font">Submit</p>
               </button>
-            </Link>
+              </Link>
+              </div>
           </div>
         </div>
       </Route>
