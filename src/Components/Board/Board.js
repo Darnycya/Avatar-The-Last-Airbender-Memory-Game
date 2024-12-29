@@ -132,7 +132,7 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
     }));
     setCards(newCards);
 
-    if (completed.length === 3 && !isGameCompleted) {
+    if (completed.length === 12 && !isGameCompleted) {
       setIsGameCompleted(true);
       stopTimer();
       openModal();
