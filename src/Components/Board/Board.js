@@ -149,7 +149,7 @@ const Board = ({
     }));
     setCards(newCards);
 
-    if (completed.length === 2 && !isGameCompleted) {
+    if (completed.length === 12 && !isGameCompleted) {
       setIsGameCompleted(true);
       stopTimer();
 
