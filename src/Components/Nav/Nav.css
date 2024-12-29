@@ -7,11 +7,12 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
 }
 
 .welcome-text {
   margin-left: 20px;
-  padding: 20px;
+  font-size: 20px;
 }
 
 .pause-button {
@@ -20,11 +21,6 @@
   width: 20px;
   height: 20px;
   padding: 0;
-}
-
-.welcome-text {
-  font-size: 20px;
-  margin-top: 10px;
 }
 
 .timer-container {
@@ -42,4 +38,14 @@
 .play-logo {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 500px) {
+  .welcome-text {
+    font-size: 16px;
+  }
+
+  .timer {
+    font-size: 16px;
+  }
 }

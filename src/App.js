@@ -62,7 +62,7 @@ export default function App() {
     <>
       <Route path="/" exact>
         <div className="main">
-          <h1>AVATAR: THE LAST AIRBENDER MEMORY GAME</h1>
+          <h1 className="welcome-header">AVATAR: THE LAST AIRBENDER MEMORY GAME</h1>
           <div className="objective">
             <p>
               Objective: Click a card to flip it over and click another to try
