@@ -1,23 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import Card from '../Card/Card';
-import ScoreBoard from '../ScoreBoard/ScoreBoard';
-import useScoreBoard from '../ScoreBoard/useScoreBoard';
-import './Board.css';
-import Appa from '../../Assets/Images/Appa.png';
-import Katara from '../../Assets/Images/Katara.jpeg';
-import PrinceZuko from '../../Assets/Images/Prince_Zuko.jpg';
-import Sokka from '../../Assets/Images/Sokka.png';
-import Toph from '../../Assets/Images/Toph.jpg';
-import Aang from '../../Assets/Images/Aang.jpg';
-import backImg from '../../Assets/Images/Logo.jpg';
-import Iroh_smiling from '../../Assets/Images/Iroh_smiling.png';
-import Mai from '../../Assets/Images/Mai.png';
-import momo from '../../Assets/Images/momo.jpg';
-import Tylee from '../../Assets/Images/Tylee.png';
-import Azulaa from '../../Assets/Images/Azulaa.png';
-import Bumi from '../../Assets/Images/Bumi.jpeg';
+import React, { useState, useEffect } from "react";
+import Card from "../Card/Card";
+import ScoreBoard from "../ScoreBoard/ScoreBoard";
+import useScoreBoard from "../ScoreBoard/useScoreBoard";
+import "./Board.css";
+import Appa from "../../Assets/Images/Appa.png";
+import Katara from "../../Assets/Images/Katara.jpeg";
+import PrinceZuko from "../../Assets/Images/Prince_Zuko.jpg";
+import Sokka from "../../Assets/Images/Sokka.png";
+import Toph from "../../Assets/Images/Toph.jpg";
+import Aang from "../../Assets/Images/Aang.jpg";
+import backImg from "../../Assets/Images/Logo.jpg";
+import Iroh_smiling from "../../Assets/Images/Iroh_smiling.png";
+import Mai from "../../Assets/Images/Mai.png";
+import momo from "../../Assets/Images/momo.jpg";
+import Tylee from "../../Assets/Images/Tylee.png";
+import Azulaa from "../../Assets/Images/Azulaa.png";
+import Bumi from "../../Assets/Images/Bumi.jpeg";
 
-const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPaused, resumeTimer, isPaused, setTime }) => {
+const Board = ({
+  startTimer,
+  isGameStarted,
+  stopTimer,
+  setIsGameStarted,
+  setIsPaused,
+  resumeTimer,
+  isPaused,
+  setTime,
+  formattedTime,
+}) => {
   const deck = buildCards();
   const [cards, setCards] = useState(deck);
   const [checkers, setCheckers] = useState([]);
@@ -26,8 +36,7 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
   const [isGameCompleted, setIsGameCompleted] = useState(false);
   const [isFirstCardClicked, setIsFirstCardClicked] = useState(false);
 
-  const onCardClick = card => () => {
-
+  const onCardClick = (card) => () => {
     if (!isFirstCardClicked && !isGameStarted) {
       startTimer();
       setIsGameStarted(true);
@@ -47,7 +56,7 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
     const cardsInCheckersMatched = validateCheckers(newCheckers);
 
     if (cardsInCheckersMatched) {
-      setCompleted(prev => [...prev, newCheckers[0].type]);
+      setCompleted((prev) => [...prev, newCheckers[0].type]);
     }
 
     if (checkersFull(newCheckers)) {
@@ -78,7 +87,7 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
   };
 
   const handleModalClose = () => {
-    const resetCards = cards.map(card => ({
+    const resetCards = cards.map((card) => ({
       ...card,
       flipped: false,
     }));
@@ -92,11 +101,12 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
     toggle();
   };
 
-
   function buildCards() {
     let id = 0;
     const images = {
-      Aang, Appa, Katara,
+      Aang,
+      Appa,
+      Katara,
       PrinceZuko,
       Sokka, Toph, Iroh_smiling, Mai, momo, Tylee, Azulaa, Bumi
     };
@@ -125,35 +135,59 @@ const Board = ({ startTimer, isGameStarted, stopTimer, setIsGameStarted, setIsPa
     return arr;
   }
 
+  const saveScore = (name, time) => {
+    const scores = JSON.parse(localStorage.getItem("scoreboard")) || [];
+    scores.push({ name, time });
+    localStorage.setItem("scoreboard", JSON.stringify(scores));
+  };
+
   useEffect(() => {
-    const newCards = cards.map(card => ({
+    const newCards = cards.map((card) => ({
       ...card,
-      flipped: checkers.find(c => c.id === card.id) || completed.includes(card.type),
+      flipped:
+        checkers.find((c) => c.id === card.id) || completed.includes(card.type),
     }));
     setCards(newCards);
 
-    if (completed.length === 12 && !isGameCompleted) {
+    if (completed.length === 2 && !isGameCompleted) {
       setIsGameCompleted(true);
       stopTimer();
+
+      // Save the player's score when the game is completed
+      const playerName = localStorage.getItem("playerName") || "Anonymous";
+      saveScore(playerName, formattedTime);
+
       openModal();
     }
 
     // eslint-disable-next-line
   }, [checkers, completed]);
 
+  const getScores = () => {
+    return JSON.parse(localStorage.getItem("scoreboard")) || [];
+  };
+
   return (
     <>
       <div className="board">
         <div className="card-container">
-          {cards.map(card => (
-            <Card alt={card} {...card} onClick={onCardClick(card)} key={card.id} />
+          {cards.map((card) => (
+            <Card
+              alt={card}
+              {...card}
+              onClick={onCardClick(card)}
+              key={card.id}
+            />
           ))}
         </div>
       </div>
 
-
       <div className="App">
-        <ScoreBoard isShowing={isShowing} hide={handleModalClose} />
+        <ScoreBoard
+          scores={getScores()}
+          isShowing={isShowing}
+          hide={handleModalClose}
+        />
       </div>
     </>
   );
